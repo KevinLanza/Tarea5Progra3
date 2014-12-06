@@ -5,6 +5,8 @@
 #include "Nodo.h"
 using namespace std;
 
+//Trabajo realizado en grupo con Maynor Morales, Iveth Sabillon, Merary Fernandez
+
 
 template <typename Tipo>
 class Lista
@@ -85,44 +87,43 @@ public:
     //Devuelve true si la lista esta vacia, de lo contrario devuelve false
     bool estaVacia()
     {
-        if(inicio == NULL)
+        if(inicio == NULL)//Se hace un if para evaluar la condicion de si la lista esta vacia
         {
-            return true;
+            return true;//Si la condicion se cumple devuelve true
         }
-        return false;
+        return false;//Si la condicion no se cumple devuelve false
     }
 
     //Devuelve el valor almacenado en el primer nodo de la lista
     Tipo obtenerPrimerValor()
     {
-    return inicio->valor;
+    return inicio->valor;//Devuelve el primer valor que exste en la lista
     }
 
     //Devuelve el valor almacenado en el ultimo nodo de la lista
     Tipo obtenerUltimoValor()
     {
-        Nodo<Tipo>* temp = inicio;
-        while(temp->sig!=NULL)
+        Nodo<Tipo>* temp = inicio;//Se hace un nuevo nodo para evaluarlo
+        while(temp->sig!=NULL)//Con un ciclo while se va recorriendo la lista
         {
-            temp = temp->sig;
+            temp = temp->sig;//El nuevo nodo se convierte el en el siguiente de ese nodo 
         }
-        return temp->valor;
+        return temp->valor;//Devuelve el valor del nodo del final de la lista 
     }
 
     //Devuelve el valor mayor almacenado en la lista
     Tipo obtenerMayor()
     {
-        Nodo<Tipo>* temp = inicio;
-        int mayor=-9999;
-        while(temp!=NULL)
+        Nodo<Tipo>* temp = inicio;//Se hace un nuevo nodo para evaluarlo
+        int mayor=-9999;//Se hace una variable int para evaluarlo en la condicion de si es mayor
+        while(temp!=NULL)//Un ciclo while que lo anidamos a otras condiciones para buscar lo que queremos 
         {
-            if(mayor<temp->valor)
+            if(mayor<temp->valor)//Hacemos un if para evaluar el valor del nodo hecho con la variable hecha
             {
-                mayor = temp->valor;
+                mayor = temp->valor;//Si la condicion se cumple la variable toma el valor del nodo 
             }
-            temp = temp->sig;
-        }
-        return mayor;
+            temp = temp->sig;//El nodo hecho toma el valor del siguiente valor del nodo 
+        return mayor;//Devuelve el numero mayor del ciclo 
     }
 };
 #endif // LISTA_H
